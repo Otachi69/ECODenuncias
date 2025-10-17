@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - EcoDenuncias</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Inicio</a>
+            <span>Bienvenido a EcoDenuncias, {{ user.first_name|default:user.username }}!</span>
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        </nav>
+
+        <h1>Dashboard</h1>
+        {% if roles %}
+            <p>Roles asignados: <strong>{{ roles|join:", " }}</strong></p>
+        {% else %}
+            <p>No tienes roles asignados.</p>
+        {% endif %}
+    </header>
+
+</body>
+</html>
