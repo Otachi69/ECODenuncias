@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-thkg$3=pp^7n=xc1k&2cx=vllge_ih7(0my2!zli1&rmz&9^jt
 DEBUG = True
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ORIGIN_ALLOWED = True
+CORS_ORIGIN_ALLOW_ALL = True
 ALLOWED_HOSTS = ['*']
 
 
@@ -158,7 +158,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'appEcoDenuncias.Usuarios'
-
-CORS_ALLOWED_ORIGINS ={
-    
-}
