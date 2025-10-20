@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-thkg$3=pp^7n=xc1k&2cx=vllge_ih7(0my2!zli1&rmz&9^jt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.3.44.176']
+ALLOWED_HOSTS = [ ]
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'appEcoDenuncias',
+    'corsheaders',
     'rest_framework',
 ]
 AUTH_USER_MODEL = 'appEcoDenuncias.Usuarios'
@@ -52,6 +53,7 @@ LOGOUT_REDIRECT_URL = '/usuario/login/'
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
