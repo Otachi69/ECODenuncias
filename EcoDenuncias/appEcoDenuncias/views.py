@@ -113,3 +113,26 @@ def territoriales(request):
         return JsonResponse({'mensaje': 'Territorial creado exitosamente', 'nombre_territorial': nombreTerritorial})
     return JsonResponse({'mensaje': 'Método no permitido'}, status=405)
         
+
+
+
+def requerimientos(request):
+    if request.method == 'POST':
+        tipo_requerimiento = request.POST.get('tipo_requerimiento')
+        estado = request.POST.get('estado')
+        radicado = request.POST.get('radicado')
+        usuario_id = request.POST.get('usuario_id')
+        
+        usuario = Usuarios.objects.get(usuario=usuario_id)
+        
+        requerimiento = Requerimientos.objects.create(
+            usuario=usuario,
+            tipo_requerimiento=tipo_requerimiento,
+            estado=estado,
+            radicado=radicado
+        )
+        
+        requerimiento.save()
+        
+        return JsonResponse({'mensaje': 'Requerimiento creado exitosamente', 'radicado': radicado})
+    return JsonResponse({'mensaje': 'Método no permitido'}, status=405)

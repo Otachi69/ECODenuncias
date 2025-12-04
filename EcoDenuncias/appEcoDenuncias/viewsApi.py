@@ -134,6 +134,7 @@ class FuncionariosDetail(generics.RetrieveUpdateDestroyAPIView):
 #
 
 class RequerimientosList(generics.ListCreateAPIView):
+    Usuarios = Usuarios.objects.all()
     queryset = Requerimientos.objects.all()
     serializer_class = RequerimientosSerializer
     
